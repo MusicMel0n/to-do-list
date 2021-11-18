@@ -74,5 +74,11 @@ if start == "complete":
     print("\n")
     print(f"succesfully marked task {complete} as complete")
 
+if start == "wipe":
+    fr = open("output.txt", "r+")
+    fr.truncate(0)
+    fr.seek(0)
+    fr.close()
+
 if start == "exit":
     exit(0)
