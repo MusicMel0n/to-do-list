@@ -1,6 +1,8 @@
 from datetime import datetime
 from colorama import Style
 from colorama import Fore
+import os
+from colorama import init
 now = datetime.today()
 now2 = now.strftime("%d/%m/%Y %H:%M:%S")
 
@@ -8,11 +10,14 @@ def convert(string):
     li = list(string.split("\n"))
     return li
 
+init()
 print(f"{Fore.YELLOW} _____      ______        _     _     _   \n|_   _|     |  _  \      | |   (_)   | |  \n  | | ___   | | | |___   | |    _ ___| |_ \n  | |/ _ \  | | | / _ \  | |   | / __| __|\n  | | (_) | | |/ / (_) | | |___| \__ \ |_ \n  \_/\___/  |___/ \___/  \_____/_|___/\__|{Style.RESET_ALL}")
 
 print(f"{Fore.RED}Type 'help' for a list of commands{Style.RESET_ALL}")
 
+
 while True:
+    init(convert=True)
     try:
         open("output.txt", "r")       
     except FileNotFoundError:
@@ -24,8 +29,9 @@ while True:
     for line in fr:
         if line != "\n":
             line_count += 1
-    
-    start = input(f"{Fore.YELLOW}Enter a command:{Style.RESET_ALL}\n")
+
+    print(f"{Fore.YELLOW}Enter a command:{Style.RESET_ALL}")
+    start = input()
 
     if start == "help":
         print(f"{Fore.BLUE}Commands:{Style.RESET_ALL}{Fore.RED}\nadd {Fore.GREEN}(add a task)\n{Fore.RED}see {Fore.GREEN}(see your tasks)\n{Fore.RED}remove {Fore.GREEN}(remove a task)\n{Fore.RED}complete {Fore.GREEN}(mark a task as completed)\n{Fore.RED}wipe {Fore.GREEN}(wipes your entire list)\n{Fore.RED}exit {Fore.GREEN}(exits the program){Style.RESET_ALL}")
