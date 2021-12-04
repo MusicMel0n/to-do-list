@@ -8,4 +8,6 @@ Simple to do list python program
 Python 3
 
 **colorama:**
-``pip install colorama``
+``
+pip install colorama
+``
