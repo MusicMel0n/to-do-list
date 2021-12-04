@@ -7,5 +7,5 @@ Simple to do list python program
 
 Python 3
 
-**Colorama:**
-```pip install colorama```
+**colorama:**
+``pip install colorama``
